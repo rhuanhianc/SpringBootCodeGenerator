@@ -1,10 +1,10 @@
 # SpringBootCodeGenerator
 ----
-又名`JAVA在线代码生成平台`、`sql转java`、`大狼狗代码生成器`、`mybatis在线生成器`、`SQL转Java JPA、MYBATIS实现类代码生成平台`<br>
+又名`Java代码生成器`、`JAVA在线代码生成平台`、`sql转java`、`大狼狗代码生成器`、`mybatis在线生成器`、`SQL转Java JPA、MYBATIS实现类代码生成平台`<br>
 ![image](https://img.shields.io/badge/SpringBoot2-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-blue.svg)
 ![image](https://img.shields.io/badge/Freemarker-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-blue.svg)
 ![image](https://img.shields.io/badge/CodeGenerator-%E2%98%85%E2%98%85%E2%98%85%E2%98%85%E2%98%85-blue.svg)
-[![Build Status](https://travis-ci.org/moshowgame/SpringBootCodeGenerator.svg?branch=master)](https://travis-ci.org/moshowgame/SpringBootCodeGenerator)
+[![Java CI with Maven](https://github.com/moshowgame/SpringBootCodeGenerator/actions/workflows/maven.yml/badge.svg)](https://github.com/moshowgame/SpringBootCodeGenerator/actions/workflows/maven.yml)
 
 # Author
 >powered by `Moshow郑锴(大狼狗)` , [https://zhengkai.blog.csdn.net](https://zhengkai.blog.csdn.net)
@@ -16,17 +16,37 @@
 >For reducing the repetitive CRUD work<br>
 >          #以解放双手为目的，减少大量的`重复CRUD工作`
 >
->mainly support mysql, support oracle and pgsql as well<br>
+>Support mysql, oracle and pgsql<br>
 >          #支持`MySQL`、Oracle、PgSQL三大主流数据库
 >
->generate to many popular templates by ddl-sql/insert-sql/simple json<br>
->   可通过`建表SQL语句`或`INSERT语句`或者`简单JSON`生成`JPA/JdbcTemplate/Mybatis/MybatisPlus/BeetlSQL/CommonMapper`相关模板代码.
+>Generate to many predefined popular templates by DDL-SQL/Insert-SQL/Simple JSON<br>
+>   可通过`建表SQL语句`或`INSERT语句`或者`简单JSON`生成预设的`JPA/JdbcTemplate/Mybatis/MybatisPlus/BeetlSQL/CommonMapper`相关模板代码.
 >
->thanks for your using and feedback,I'm inspired by the 600PV every day and github more than 900 stars <br>
->   感谢大家的使用和反馈，每天六百的PV和获得超过九百多的星星是我前进和继续做下去的动力。
+>Thanks for your using and feedback,I'm inspired by the 1500+PV (AVG) every day and github more than 1.9K stars <br>
+>   感谢大家的使用和反馈，每天1500的PV和获得超过九百多的星星是我前进和继续做下去的动力。
 > 
->hope everyone can keep good balance on work and life , stay health and safety , be smooth on work as well<br>
->   愿大家可以维持生活和工作平衡，保持健康和安全，祝大家工作顺利！
+>Hope everyone can keep good balance on work and life , stay health and safety . I wish you success in your new position and get promoted step by step.  <br>
+>   愿大家可以维持生活和工作平衡，保持健康和安全，祝大家工作顺利，步步高升！
+>Please submit your issue and template , or pull your good idea into the PR <br>
+>   提交你的问题和生成模板，或者提交你的好主意到PR。
+
+
+# URL
+
+- 感谢`卡卡`将他部署在[BEJSON](https://java.bejson.com/generator)上，目前是besjon专供的`金牌工具`(线上版本不一定是最新的，会有延迟，请谅解，谢谢).<br>
+- 感谢`jully.top`部署的副本 [https://jully.top/generator/](https://jully.top/generator/)。<br>
+- 感谢`BootCDN`提供稳定、快速、免费的前端开源项目 CDN 加速服务
+- Thanks for `JetBrains` providing us the `Licenses for Open Source Development` ，[Get free access to all JetBrains tools for developing your open source project!](https://www.jetbrains.com/community/opensource/#support) .<br>
+
+| 访问地址                   | http://localhost:1234/generator                               |
+|:-----------------------|:--------------------------------------------------------------|
+| BEJSON 金牌工具 在线地址           | https://java.bejson.com/generator/                            |
+| JSON.CN 金牌工具 在线地址         | https://java.json.cn/generator/                            |
+| Jully 在线地址             | https://jully.top/generator/                                  |
+| DEVTOOLS 在线地址（Demised） | https://java.devtools.cn                                      |
+| CSDN BLOG              | https://zhengkai.blog.csdn.net                                |
+| GITEE仓库                | https://gitee.com/moshowgame/SpringBootCodeGenerator/releases |
+| GITHUB仓库               | https://github.com/moshowgame/SpringBootCodeGenerator         |
 
 # Tips or Features
 - 支持`DDL SQL`/`INSERT SQL`/`SIMPLE JSON`三种生成模式
@@ -39,29 +59,24 @@
 - 可设置`表名前缀`，例如sys_user前缀为sys_之后可以正确生成user类
 - 可在`applicaltion.yml`中的`OEM.mode`设置`js/css引入模式`为`local`(本地模式，默认)/`CDN`(云CDN模式，在线网站推荐，省流量)
 - OEM信息可以在`applicaltion.yml`中的`OEM`中更改
-- *支持公共js/css的Local/CDN模式切换，方便`本地`或者`工具站`进行部署，可以在`application.yml`的`OEM.Mode=`进行设置，之后请在`header-CDN.html`/`header-local.html`中检查对应js/css配置是否正确。
+- *支持公共js/css的Local/CDN模式切换，方便`本地`或者`工具站`进行部署，可以在`application.yml`的`OEM.Mode=`进行设置，之后请在`header-CDN-v2.html`/`header-local-v2.html`中检查对应js/css配置是否正确。默认为`CDN`模式。对于没有网络的环境请使用`local`模式。
 
-# Url
+# Branch Detail 分支介绍
+- Master：主力分支，基于SpringBoot3+，需要JDK17+
+- JDK11：兼容分支，基于SpringBoot2+，支持JDK8/JDK11/JDK17等版本，请自行(切换jdk11分支)[https://github.com/moshowgame/SpringBootCodeGenerator/tree/jdk11]
+- NewUI：新UI界面改版尝鲜
 
-感谢`卡卡`将他部署在[BEJSON](https://java.bejson.com/generator)上，目前是besjon专供的金牌工具(线上版本不一定是最新的，会有延迟，请谅解，谢谢).<br>
-感谢`jully.top`部署的副本 [https://jully.top/generator/](https://jully.top/generator/)。<br>
-感谢`三叔`将他部署在[DEVTOOLS](https://java.devtools.cn/) （Demised）上，继续作为Golden Tool开放给大家使用。<br>
-感谢`七牛`提供的云js/css免费加速服务，它尽可能全面收录优秀的开源库，并免费为之提供 CDN 加速服务，使之有更好的访问速度和稳定的环境。
-Thanks for `JetBrains` providing us the `Licenses for Open Source Development` ，[Get free access to all JetBrains tools for developing your open source project!](https://www.jetbrains.com/community/opensource/#support) .<br>
-
-| 访问地址                   | http://localhost:1234/generator                               |
-|:-----------------------|:--------------------------------------------------------------|
-| BEJSON 在线地址            | https://java.bejson.com/generator/                            |
-| Jully 在线地址             | https://jully.top/generator/                                  |
-| DEVTOOLS 在线地址（Demised） | https://java.devtools.cn                                      |
-| CSDN BLOG              | https://zhengkai.blog.csdn.net                                |
-| GITEE仓库                | https://gitee.com/moshowgame/SpringBootCodeGenerator/releases |
-| GITHUB仓库               | https://github.com/moshowgame/SpringBootCodeGenerator         |
-
+# 更新预告
+1.计划引入DJANGO等其他语言的ORM模板，欢迎大家submit相关代码供参考
 
 # Update Logs
 | 更新日期       | 更新内容                                                                                                                                                                                                                                                              |
 |:-----------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2024.04.23 | 切换为更快更稳定的BootCDN进行加速。<br>前端NEWUI改版（基于AdminLTE+Bootstrap+Vue+ElementUI混合模式）。|
+| 2024.04.22 | [Java CI with Maven](https://github.com/moshowgame/SpringBootCodeGenerator/actions/workflows/maven.yml) 更新<br>SpringBoot升级到3.2.5<br>FastJSON升级到FastJSON2.0.49|
+| 2024.04.21 | 推出JDK11分支，支持JDK8/JDK11/JDK17等版本，兼容性较好但维护速度较慢，为了更好兼容旧机器和旧环境|
+| 2024.04.20 | 修复CDN版本cdn.staticfile.org域名备份失败问题，已同步更新到cdn.staticfile.net（本地版本则不受影响）|
+| 2024.01.26 | 修复大写下滑线列名转驼峰问题（感谢@Nisus-Liu的PR）|
 | 2023.10.22 | 工具站CDN更新。                                                                                                                                                                                                                                                         |
 | 2023.08.31 | （感谢@Nisus-Liu的PR）<br>fix 驼峰列名转命名风格错误问题<br>增强转下划线命名风格, 对原始风格不敏感. 支持各种命名风格的列名 to 下划线<br>增加 NonCaseString 大小写不敏感字符串包装类, 简化编码<br>几点代码小优化。                                                                                                                             |
 | 2023.07.11 | 安全更新，正式支持SpringBoot3，javax升级到jakarta。                                                                                                                                                                                                                             |
@@ -159,8 +174,25 @@ Thanks for `JetBrains` providing us the `Licenses for Open Source Development` �
 2. COPY并编写freemarker模板文件`.ftl`
 3. 修改`template.json`文件，新增模板信息，页面可动态加载
 
+# Upgrade Issue Resolution 升级问题解决方案
+- 如果你最近也在升级FastJson到FastJson2版本，而跟我一样也遇到了FastJsonHttpMessageConverter找不到类问题以及FastJsonConfig找不到问题，那么恭喜你，看完本文，安装完fastjson2、fastjson2-extension、fastjson2-extension-spring6这三个类库，你就可以成功使用新版FastJson2了。
+ [FastJson2中FastJsonHttpMessageConverter找不到类问题](https://blog.csdn.net/moshowgame/article/details/138013669)
+
+- 当项目从2.7.x的springboot升级到3.0.x的时候，遇到一个问题“java: 程序包javax.servlet.http不存在” 问题：
+ [java: 程序包javax.servlet.http不存在](https://zhengkai.blog.csdn.net/article/details/131362304)
+
+2024 NEWUI版本
+<img src="./newui_version.png">
+2021 半Vue半JS版本
 <img src="./codegenerator1.png">
+2019 初代版本
+<img src="./old_version.png">
+配置模板
 <img src="./codegenerator2.png">
+网站流量分析-2024
+<img src="./site_analysis-2024.png">
+网站流量分析-2022
 <img src="./site_analysis.png">
+代码与你，越变越美
 <img src="./donate.png">
 
